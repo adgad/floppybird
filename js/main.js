@@ -34,7 +34,7 @@ var jump = -4.6;
 var score = 0;
 var highscore = 0;
 
-var pipeheight = 90;
+var pipeheight = 120;
 var pipewidth = 52;
 var pipes = new Array();
 
@@ -97,7 +97,7 @@ function showSplash()
    position = 180;
    rotation = 0;
    score = 0;
-   
+   $('#birthday').text('');
    //update the player in preparation for the next game
    $("#player").css({ y: 0, x: 0});
    updatePlayer($("#player"));
@@ -451,7 +451,9 @@ $("#replay").click(function() {
 
 function playerScore()
 {
+   var bday = "HAPPY BIRTHDAY TRISHA MEERA MISTRY!!";
    score += 1;
+   $('#birthday').text(bday.substring(0, score));
    //play score sound
    soundScore.stop();
    soundScore.play();
